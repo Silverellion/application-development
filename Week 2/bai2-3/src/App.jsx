@@ -9,14 +9,14 @@ const App = () => {
   return (
     <>
       <CreateButton
+        text="Hello world"
+        type="primary"
+        onClick={() => setAlertType("warning")}
+      />
+      <CreateButton
         text="Success"
         type="success"
         onClick={() => setAlertType("success")}
-      />
-      <CreateButton
-        text="Warning"
-        type="danger"
-        onClick={() => setAlertType("warning")}
       />
       <CreateButton
         text="Error"
