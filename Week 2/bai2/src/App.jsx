@@ -1,6 +1,6 @@
 import React from "react";
 import "./app.css";
-import { CreateButton } from "./components/Button";
+import { CreateButton } from "./components/button/Button";
 
 const App = () => {
   return (

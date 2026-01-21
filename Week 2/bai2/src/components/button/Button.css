@@ -1,0 +1,29 @@
+.btn {
+  width: 300px;
+  height: 80px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-primary {
+  background-color: rgb(170, 238, 243);
+}
+.btn-primary:hover {
+  background-color: rgb(120, 210, 220);
+}
+
+.btn-danger {
+  background-color: rgb(228, 59, 59);
+}
+.btn-danger:hover {
+  background-color: rgb(190, 40, 40);
+}
+
+.btn-success {
+  background-color: rgb(147, 255, 75);
+}
+.btn-success:hover {
+  background-color: rgb(110, 220, 60);
+}
