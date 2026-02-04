@@ -1,0 +1,28 @@
+.status-badge {
+  width: 200px;
+  height: 75px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-badge select {
+  background-color: rgb(60, 60, 60);
+}
+
+.status-badge.online {
+  background-color: limegreen;
+}
+
+.status-badge.offline {
+  background-color: grey;
+}
+
+.status-badge.busy {
+  background-color: darkred;
+}
