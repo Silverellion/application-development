@@ -1,21 +1,29 @@
-import React from 'react'
-import "./Form.css"
-import { useRef } from 'react';
+import React from "react";
+import "./Form.css";
 
-const Form = ({nameRef, emailRef}) => {
-    
+const Form = ({ name, email, onNameChange, onEmailChange }) => {
   return (
-    <div className='form'>
-      <p className='title'>Form</p>
+    <div className="form">
+      <p className="title">Form</p>
       <hr />
 
-      <p className='regular'>Name</p>
-      <input type="text" placeholder='James' ref = {nameRef}/>
+      <p className="regular">Name</p>
+      <input
+        type="text"
+        placeholder="James"
+        value={name}
+        onChange={(e) => onNameChange(e.target.value)}
+      />
 
-      <p className='regular'>Email</p>
-      <input type="email" placeholder='abc@yourcompany.com' ref={emailRef}/>
+      <p className="regular">Email</p>
+      <input
+        type="email"
+        placeholder="abc@yourcompany.com"
+        value={email}
+        onChange={(e) => onEmailChange(e.target.value)}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

@@ -1,16 +1,28 @@
-import React from 'react'
-import "./App.css"
-import Form from './components/form/Form'
+import React, { useState } from "react";
+import "./App.css";
+import Form from "./components/form/Form";
 
 const App = () => {
-  const nameRef = useRef('');
-    const emailRef = useRef('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
     <>
-      <Form nameRef={nameRef} emailRef={emailRef}/>
-    </>
-  )
-}
+      <Form
+        name={name}
+        email={email}
+        onNameChange={setName}
+        onEmailChange={setEmail}
+      />
 
-export default App
+      <div>
+        <p className="title">Preview</p>
+        <hr />
+        <p className="regular">Name: {name}</p>
+        <p className="regular">Email: {email}</p>
+      </div>
+    </>
+  );
+};
+
+export default App;
