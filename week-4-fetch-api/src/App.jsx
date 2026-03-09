@@ -2,59 +2,120 @@ import React, { useEffect, useState } from 'react'
 import "./App.css"
 
 const App = () => {
-
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+  // BÀI 1 & 2
+  // const [users, setUsers] = useState([]);
+  // const [loading, setLoading] = useState(true)
+  // const [error, setError] = useState(false)
 
   // useEffect(() => {
-  //   const url = "https://jsonplaceholder.typicode.com/users"
-  //   fetch(url).then((response) => {
-  //     return response.json()
-  //   }).then((data) => {
-  //     setUsers(data)
-  //     console.log(data)
-  //   })
+  //   async function fetchData() {
+  //     setTimeout(() => {
+  //       setLoading(false)
+  //         const url = "https://jsonplaceholder.typicode.com/users"
+  //         fetch(url).then((response) => {
+  //           if(!response.ok)
+  //             setError(true);
+  //           return response.json()
+  //         }).then((data) => {
+  //           if(!data || data.length === 0) {
+  //             setError(true)
+  //           } else {
+  //             setUsers(data)
+  //           }
+  //           console.log(data)
+  //         })
+  //     }, 1000)
+  //   }
+  //   fetchData()
   // }, [])
 
-  useEffect(() => {
-    async function fetchData() {
-      setTimeout(() => {
-        setLoading(false)
-          const url = "https://jsonplaceholder.typicode.com/users"
-          fetch(url).then((response) => {
-            if(!response.ok)
-              setError(true);
-            return response.json()
-          }).then((data) => {
-            if(!data || data.length === 0) {
-              setError(true)
-            } else {
-              setUsers(data)
-            }
-            console.log(data)
-          })
-      }, 1000)
-    }
-    fetchData()
-  }, [])
+  // return (
+  //   <>
+  //     {loading?"Loading....":"Finished Loading!"}
+  //     <br />
+  //     {error?"Error!":""}
+  //     {users.map((user) => (
+  //       <>
+  //         <div key={user.id}>
+  //           <p>Username: {user.name}</p>
+  //           <p>Email: {user.email}</p>
+  //           <br />
+  //         </div>
+  //       </>
+  //     ))}
+  //   </>
+  // );
+  // BÀI 3:
 
-return (
-  <>
-    {loading?"Loading....":"Finished Loading!"}
-    <br />
-    {error?"Error!":""}
-    {users.map((user) => (
-      <>
-        <div key={user.id}>
-          <p>Username: {user.name}</p>
-          <p>Email: {user.email}</p>
-          <br />
+  const [tempUserId, setTempUserId] = useState("");
+  const [url, setUrl] = useState("")
+  const [user, setUser] = useState("")
+  const [error, setError] = useState(false)
+
+  const urlTemplate = "https://jsonplaceholder.typicode.com/users/"
+
+  function searchButton() {
+    setUrl("")
+    setUser("")
+    setError(false)
+
+    if(tempUserId === "")
+      return;
+
+    const newUrl = urlTemplate + tempUserId;
+    setUrl(newUrl)
+    console.log(url)
+
+    setTempUserId("")
+
+    fetch(newUrl)
+      .then((response) => { 
+        if(!response.ok) {
+          setError(true)
+          return;
+        }
+        return response.json()
+      })
+      .then((data) => {
+        if(!data || data.length === 0) {
+          setError(true)
+          return;
+        }
+
+        setError(false)
+        setUser(data);
+        console.log(data)
+      })
+  }
+
+  return (
+    <>
+      <div>
+        <input
+          type="text" 
+          value={tempUserId}
+          onChange={((e) => (setTempUserId(e.target.value)))}
+          />
+      </div>
+      <button onClick={searchButton} className='search-button'>
+        Search
+      </button>
+
+      {!error && (
+        <div>
+          <p>{user.name}</p>
+          <p>{user.phone}</p>
+          <p>{user.email}</p>
         </div>
-      </>
-    ))}
-  </>
-);
+      )}
+
+      {error && (
+        <div>
+          Error loading data!
+        </div>
+      )}
+    </>
+  )
 }
 
 export default App

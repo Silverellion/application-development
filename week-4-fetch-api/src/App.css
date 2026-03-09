@@ -17,3 +17,10 @@ body * {
   color: white
 }
 
+input {
+  color: black;
+}
+
+.search-button {
+  color: black
+}
