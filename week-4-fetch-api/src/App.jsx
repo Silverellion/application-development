@@ -122,11 +122,13 @@ const App = () => {
 
   const [searchText, setSearchText] = useState("")
   const [fetchedData, setFetchedData] = useState([])
+  const [error, setError] = useState(false)
   const [displayPosts, setDisplayPosts] = useState([])
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   useEffect(() => {
+    setError(false)
     fetch(url)
       .then((response) => {
         return response.json();
@@ -138,8 +140,18 @@ const App = () => {
   }, [])
 
   function searchButton() {
-    const filteredData = fetchedData.filter((temp) => temp.toLowerCase().includes(searchText.toLowerCase()))
+    setDisplayPosts([])
+    setError(false)
+    
+    const filteredData = fetchedData.filter((temp) => temp.title.toLowerCase().includes(searchText.toLowerCase()))
     console.log(filteredData)
+
+    if(!filteredData || filteredData.length == 0) {
+      setError(true)
+      return;
+    }
+    else
+      setDisplayPosts(filteredData)
   }
 
   return (
@@ -151,11 +163,24 @@ const App = () => {
           onChange={(e) => setSearchText(e.target.value)}  
         />
         <button onClick={searchButton} className='search-button'>
-          Search
+          Search post titles
         </button>
       </div>
+      {error && (
+        <div>
+          No posts found!
+        </div>
+      )}
+      {!error && (
+        displayPosts.map((displayPost) => (
+          <div key = {displayPost.id}>
+            <h1>{displayPost.title}</h1>
+            <p>{displayPost.body}</p>
+          </div>
+        ))
+      )}
     </>
   )
-}
+};
 
 export default App
