@@ -117,15 +117,5 @@ const App = () => {
         </>
     )
 }
-    // "id": "59761c233d8d0f92a6b0570d",
-    // "isActive": true,
-    // "age": 24,
-    // "name": "Kirsten Sellers",
-    // "gender": "female",
-    // "company": "EMERGENT",
-    // "email": "kirstensellers@emergent.com",
-    // "phone": "+1 (831) 564-2190",
-    // "address": "886 Gallatin Place, Fannett, Arkansas, 4656"
-
 
 export default App
