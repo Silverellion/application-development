@@ -29,6 +29,15 @@ const App = () => {
         console.log(displayClients);
     }
 
+    const [clientId, setClientId] = useState("")
+    const [clientAge, setClientAge] = useState(age)
+    const [clientName, setClientName] = useState("")
+    const [clientGender, setClientGender] = useState("")
+    const [clientCompany, setClientCompany] = useState("")
+    const [clientEmail, setClientEmail] = useState("")
+    const [clientPhone, setClientPhone] = useState("")
+    const [clientAddress, setClientAddress] = useState("")
+
     return(
         <>
             Look up client:
@@ -42,19 +51,81 @@ const App = () => {
                 Search
             </button>
 
-            {clients.map((client, index) => (
-                <div key={client.id}>
-                    <h1>Client #{index + 1}'s</h1>
-                    <p>Client's name: {client.name}</p>
-                    <p>Client's gender: {client.gender}</p>
-                    <p>Client's age: {client.age}</p>
+            {displayClients.map((displayClient, index) => (
+                <div key={displayClient.id}>
+                    <h1>Client #{index + 1}:</h1>
+                    <p>Client's name: {displayClient.name}</p>
+                    <p>Client's gender: {displayClient.gender}</p>
+                    <p>Client's age: {displayClient.age}</p>
                 </div>
             ))}
+
+            <div>
+                Add a client:
+                    <br />
+                id: <input type="text" 
+                    placeholder="Enter client's id"
+                    value={clientId}
+                    onChange={(e) => setClientId(e.target.value)}
+                    /> 
+                    <br />
+                age: <input type="number" 
+                    placeholder="Enter client's age"
+                    value={clientAge}
+                    onChange={(e) => setClientAge(e.target.value)}
+                    /> 
+                    <br />
+                name: <input type="text" 
+                    placeholder="Enter client's name"
+                    value={clientName}
+                    onChange={(e) => setClientName(e.target.value)}
+                    /> 
+                    <br />
+                gender: <input type="text" 
+                    placeholder="Enter client's gender"
+                    value={clientGender}
+                    onChange={(e) => setClientGender}
+                    /> 
+                    <br />
+                company: <input type="text" 
+                    placeholder="Enter client's company"
+                    value={clientCompany}
+                    onChange={(e) => setClientCompany}
+                    /> 
+                    <br />
+                email: <input type="text" 
+                    placeholder="Enter client's email"
+                    value={clientEmail}
+                    onChange={(e) => setClientEmail}
+                    /> 
+                    <br />
+                phone: <input type="text" 
+                    placeholder="Enter client's phone"
+                    value={clientPhone}
+                    onChange={(e) => setClientPhone(e.target.value)}
+                    /> 
+                    <br />
+                address: <input type="text" 
+                    placeholder="Enter client's address"
+                    value={clientAddress}
+                    onChange={(e) => setClientAddress(e.target.value)}
+                    /> 
+                    <br />
+                <button>Add</button>
+
+            </div>
         </>
     )
-
 }
-
+    // "id": "59761c233d8d0f92a6b0570d",
+    // "isActive": true,
+    // "age": 24,
+    // "name": "Kirsten Sellers",
+    // "gender": "female",
+    // "company": "EMERGENT",
+    // "email": "kirstensellers@emergent.com",
+    // "phone": "+1 (831) 564-2190",
+    // "address": "886 Gallatin Place, Fannett, Arkansas, 4656"
 
 
 export default App
