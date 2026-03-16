@@ -21,7 +21,7 @@ const App = () => {
     function buttonSearch() {
         setDisplayClients([])
         var tempSearchClient = searchClientText;
-        setDisplayClients("");
+        setSearchClientText("");
         const filteredClient = clients.filter(c =>
             JSON.stringify(c).toLowerCase().includes(tempSearchClient.toLocaleLowerCase())
         )
