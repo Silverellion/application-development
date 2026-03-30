@@ -11,7 +11,7 @@ const Products = () => {
           <h3>Product ID: {id}</h3>
       </div>
       <div>
-        <button onClick={() => navigate("/")}>Purchase</button>
+        <button onClick={() => navigate("/checkout")}>Purchase</button>
       </div>
       <div>
           <p>Back to home: <Link to = "/">Home</Link></p>

@@ -10,6 +10,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/dashboard/Profile";
 import Orders from "./components/dashboard/Orders";
 import Settings from "./components/dashboard/Settings";
+import Checkout from "./components/Checkout";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="orders" element = {<Orders/>}/>
           <Route path="settings" element = {< Settings/>} />
         </Route>
+        <Route path="checkout" element = {<Checkout/>} />
       </Routes>
     </BrowserRouter>
   )
