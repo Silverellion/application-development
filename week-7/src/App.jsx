@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path = "/" element = {<Home/>}/>
         <Route path = "/about" element = {<About/>}/>
         <Route path = "/contact" element = {<Contact/>}/>
+        <Route path = "*" element = {<NotFound/>}></Route>
       </Routes>
     </BrowserRouter>
   )
