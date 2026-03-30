@@ -29,6 +29,18 @@ const Home = () => {
             <Link to = "/products/3">Laptop</Link>
         </li>
       </ul>
+      <h3>Dashboard:</h3>
+      <ul>
+        <li>
+            <Link to = "/dashboard/profile">Profile</Link>
+        </li>
+        <li>
+            <Link to = "/dashboard/orders">Orders</Link>
+        </li>
+        <li>
+            <Link to = "/dashboard/settings">Settings</Link>
+        </li>
+      </ul>
     </div>
   )
 }

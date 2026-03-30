@@ -6,6 +6,10 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 import Products from "./components/Products";
+import Dashboard from "./components/dashboard/Dashboard";
+import Profile from "./components/dashboard/Profile";
+import Orders from "./components/dashboard/Orders";
+import Settings from "./components/dashboard/Settings";
 
 const App = () => {
   return (
@@ -16,6 +20,11 @@ const App = () => {
         <Route path = "/contact" element = {<Contact/>}/>
         <Route path = "*" element = {<NotFound/>}></Route>
         <Route path = "/products/:id" element = {<Products/>}></Route>
+        <Route path = "/dashboard" element = {<Dashboard/>}>
+          <Route path="profile" element = {<Profile/>}/>
+          <Route path="orders" element = {<Orders/>}/>
+          <Route path="settings" element = {< Settings/>} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
