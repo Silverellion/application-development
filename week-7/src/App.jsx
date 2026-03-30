@@ -11,6 +11,10 @@ import Profile from "./components/dashboard/Profile";
 import Orders from "./components/dashboard/Orders";
 import Settings from "./components/dashboard/Settings";
 import Checkout from "./components/Checkout";
+import ProtectedRoutes from "./components/login/ProtectedRoutes";
+import ProtectedOrders from "./components/login/ProtectedOrders";
+import ProtectedProfile from "./components/login/ProtectedProfile";
+import Login from "./components/login/Login";
 
 const App = () => {
   return (
@@ -19,14 +23,23 @@ const App = () => {
         <Route path = "/" element = {<Home/>}/>
         <Route path = "/about" element = {<About/>}/>
         <Route path = "/contact" element = {<Contact/>}/>
+
         <Route path = "*" element = {<NotFound/>}></Route>
         <Route path = "/products/:id" element = {<Products/>}></Route>
+
         <Route path = "/dashboard" element = {<Dashboard/>}>
           <Route path="profile" element = {<Profile/>}/>
           <Route path="orders" element = {<Orders/>}/>
           <Route path="settings" element = {< Settings/>} />
         </Route>
+
         <Route path="checkout" element = {<Checkout/>} />
+
+        <Route path="/login" element = {<Login/>} />
+        <Route path="/protected-routes" element= {<ProtectedRoutes/>}>
+          <Route path="protected-orders" element = {<ProtectedOrders/>}></Route>
+          <Route path="protected-profile" element = {<ProtectedProfile/>}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   )

@@ -41,6 +41,18 @@ const Home = () => {
             <Link to = "/dashboard/settings">Settings</Link>
         </li>
       </ul>
+      <h3>Protected Routes:</h3>
+      <ul>
+        <li>
+          <Link to= "/login">Login</Link>
+        </li>
+        <li>
+          <Link to= "/protected-routes/protected-orders">Protected Orders</Link>
+        </li>
+        <li>
+          <Link to= "/protected-routes/protected-profile">Protected Profiles</Link>
+        </li>
+      </ul>
     </div>
   )
 }
