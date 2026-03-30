@@ -1,11 +1,19 @@
-import React from 'react'
-import "./App.css"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import "./App.css";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div>
-      asdsa
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path = "/" element = {<Home/>}/>
+        <Route path = "/about" element = {<About/>}/>
+        <Route path = "/contact" element = {<Contact/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
