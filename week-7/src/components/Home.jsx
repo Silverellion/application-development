@@ -16,6 +16,19 @@ const Home = () => {
             <Link to = "/contact">Contact</Link>
         </li>
       </ul>
+      <br />
+      <h3>Product list:</h3>
+      <ul>
+        <li>
+            <Link to = "/products/1">Iphone</Link>
+        </li>
+        <li>
+            <Link to = "/products/2">Samsung</Link>
+        </li>
+        <li>
+            <Link to = "/products/3">Laptop</Link>
+        </li>
+      </ul>
     </div>
   )
 }
