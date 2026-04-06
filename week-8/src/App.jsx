@@ -8,19 +8,20 @@ import themeAtom from './atoms/themeAtom'
 const App = () => {
   const [theme, setTheme] = useRecoilState(themeAtom);
   function updateTheme() {
-    if(theme === 0)
-      setTheme(1)
+    if(theme === true)
+      setTheme(false)
     else
-      setTheme(0)
+      setTheme(true)
   }
 
   return (
     <>
-      <CountDisplayer/>
-      <CountUpdater/>
-      <hr />
-      <button onClick={updateTheme}>Switch theme</button>
-      <p>Current theme: {theme}</p> 
+      <div className={theme?"light-theme":"dark-theme"}>
+        <CountDisplayer/>
+        <CountUpdater/>
+        <hr />
+        <button onClick={updateTheme}>Switch theme</button>
+      </div>
     </>
   )
 }

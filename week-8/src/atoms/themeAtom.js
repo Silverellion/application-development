@@ -2,7 +2,7 @@ import { atom } from "recoil"
 
 const themeAtom = atom({
     key: "themeAtom",
-    default: 0
+    default: true
 })
 
 export default themeAtom;
