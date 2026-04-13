@@ -1,0 +1,137 @@
+/* filepath: t:\application-development\week-9-chefify-project\src\components\landing-navbar\LandingNavbar.css */
+
+.landing-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+}
+
+.landing-navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.landing-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ea4b87;
+  font-weight: 800;
+}
+
+.landing-navbar__logo {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  display: block;
+}
+
+.landing-navbar__search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  padding: 10px 14px;
+  min-width: 260px;
+}
+
+.landing-navbar__searchIcon {
+  color: #6b7280;
+  display: inline-flex;
+}
+
+.landing-navbar__searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: #111827;
+}
+
+.landing-navbar__searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.landing-navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.landing-navbar__link {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.landing-navbar__link:hover {
+  color: #111827;
+}
+
+.landing-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.landing-navbar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+.landing-navbar__btn--ghost {
+  color: #ea4b87;
+  background: #fde7f0;
+}
+
+.landing-navbar__btn--ghost:hover {
+  filter: brightness(0.98);
+}
+
+.landing-navbar__btn--primary {
+  color: #ffffff;
+  background: #ea4b87;
+}
+
+.landing-navbar__btn--primary:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 1000px) {
+  .landing-navbar__nav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-navbar__container {
+    gap: 10px;
+  }
+
+  .landing-navbar__search {
+    min-width: 0;
+  }
+
+  .landing-navbar__btn {
+    padding: 9px 12px;
+  }
+}
