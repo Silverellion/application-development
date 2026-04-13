@@ -1,11 +1,14 @@
 import React from 'react'
 import "./App.css"
 import Footer from './components/footer/Footer'
+import FoodCard from './components/cards/FoodCard'
+import FoodReviewCard from './components/cards/FoodReviewCard'
 
 const App = () => {
   return (
     <div>
-      test
+      <FoodCard />
+      <FoodReviewCard />
       <Footer />
     </div>
   )
