@@ -1,0 +1,163 @@
+/* Landing page */
+
+.landing {
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 50% -20%, rgba(255, 79, 135, 0.12), transparent 60%),
+    #ffffff;
+}
+
+.landing__main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 18px 40px;
+}
+
+.landing__hero {
+  padding: 26px 0 12px;
+}
+
+.landing__heroInner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.landing__headline {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+  color: #111827;
+  font-weight: 900;
+}
+
+.landing__subheadline {
+  margin: 0 0 18px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 54ch;
+}
+
+.landing__heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.landing__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+.landing__cta--primary {
+  color: #ffffff;
+  background: #ea4b87;
+  box-shadow: 0 14px 34px rgba(234, 75, 135, 0.28);
+}
+
+.landing__cta--ghost {
+  color: #ea4b87;
+  background: #fde7f0;
+}
+
+.landing__heroRotd {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+}
+
+.landing__heroWoman {
+  position: absolute;
+  inset: 0;
+  background-image: url("/landing-page/landing-page-woman.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.landing__section {
+  padding: 26px 0;
+}
+
+.landing__sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.landing__sectionTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #111827;
+}
+
+.landing__sectionLink {
+  color: #ea4b87;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.landing__grid {
+  display: grid;
+  gap: 16px;
+}
+
+.landing__grid--cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.landing__grid--reviews {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: start;
+}
+
+@media (max-width: 1100px) {
+  .landing__grid--cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .landing__heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .landing__heroRotd {
+    min-height: 540px;
+  }
+
+  .landing__heroWoman {
+    background-position: center bottom;
+    opacity: 0.6;
+  }
+
+  .landing__grid--cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .landing__grid--reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing__grid--cards {
+    grid-template-columns: 1fr;
+  }
+}
