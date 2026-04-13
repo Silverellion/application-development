@@ -1,11 +1,12 @@
 import React from 'react'
 import "./App.css"
-import LandingPage from './components/pages/LandingPage/LandingPage'
+import Footer from './components/footer/Footer'
 
 const App = () => {
   return (
     <div>
-      <LandingPage/>
+      test
+      <Footer />
     </div>
   )
 }
