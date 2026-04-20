@@ -15,24 +15,13 @@ const Landing = () => {
       <main className="landing__main">
         <header className="landing__hero" aria-label="Chefify landing">
           <div className="landing__heroInner">
-            <div className="landing__heroText">
-              <h1 className="landing__headline">Cook like a pro with Chefify</h1>
-              <p className="landing__subheadline">
-                Discover new recipes, watch step-by-step videos, and save your favorites.
-              </p>
-
-              <div className="landing__heroCtas">
-                <a className="landing__cta landing__cta--primary" href="#recipes">
-                  Explore recipes
-                </a>
-                <a className="landing__cta landing__cta--ghost" href="#videos">
-                  Recipes with videos
-                </a>
-              </div>
-            </div>
-
+            <img
+              className="landing__heroWoman"
+              src="/landing-page/landing-page-woman.png"
+              alt=""
+              aria-hidden="true"
+            />
             <div className="landing__heroRotd">
-              <div className="landing__heroWoman" aria-hidden="true" />
               <RecipeOfTheDay
                 title="Spaghetti Carbonara"
                 description="A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper."

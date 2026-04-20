@@ -1,34 +1,33 @@
-/* filepath: t:\application-development\week-9-chefify-project\src\components\others\recipe-of-the-day\RecipeOfTheDay.css */
-
 .rotd {
   width: min(420px, 100%);
   position: relative;
-  padding-top: 18px;
   margin: 24px auto;
 }
 
-.rotd__badge {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fbbf24;
-  color: #111827;
-  font-weight: 700;
-  font-size: 12px;
-  padding: 7px 14px;
-  border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.12);
-}
-
 .rotd__card {
+  position: relative;
   background: #ffffff;
   border-radius: 18px;
-  padding: 28px 26px 24px;
+  padding: 38px 26px 24px;
   box-shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
   text-align: center;
 }
 
+.rotd__badge {
+  position: absolute;
+  margin-top: 60px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fbbf24;
+  color: #111827;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 7px 18px;
+  border-radius: 4px;
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.12);
+  z-index: 2;
+}
 .rotd__title {
   margin: 10px 0 10px;
   font-size: 28px;
